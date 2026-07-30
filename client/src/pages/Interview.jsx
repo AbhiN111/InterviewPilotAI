@@ -1,0 +1,7 @@
+function Interview() {
+    return (
+        <h1>Home Page</h1>
+    );
+}
+
+export default Interview;
