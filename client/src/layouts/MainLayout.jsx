@@ -1,13 +1,14 @@
 import Navbar from "../components/Navbar";
+import "./MainLayout.css";
 
 function MainLayout({ children }) {
   return (
     <>
       <Navbar />
 
-      <div className="container mt-4">
+      <main className="main-layout">
         {children}
-      </div>
+      </main>
     </>
   );
 }

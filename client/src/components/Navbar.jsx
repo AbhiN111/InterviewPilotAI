@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
+import { FaRobot } from "react-icons/fa";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar-custom">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          InterviewPilot AI
+
+        <Link className="logo" to="/">
+          <FaRobot className="logo-icon" />
+          <span>InterviewPilot AI</span>
         </Link>
 
-        <div className="navbar-nav ms-auto">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/login">Login</Link>
 
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
-
-          <Link className="nav-link" to="/register">
+          <Link className="register-btn" to="/register">
             Register
           </Link>
         </div>
+
       </div>
     </nav>
   );
