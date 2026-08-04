@@ -1,0 +1,142 @@
+/* =========================================
+   Stats Section
+========================================= */
+
+.stats {
+    padding: 80px 0;
+    position: relative;
+    background: transparent;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* =========================================
+   Card
+========================================= */
+
+.stat-card {
+    position: relative;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 24px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: all .35s ease;
+}
+
+/* Glow */
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(79,140,255,.12),
+        rgba(124,92,252,.08)
+    );
+    opacity: 0;
+    transition: .35s ease;
+}
+
+/* Hover */
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(79,140,255,.35);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 45px rgba(79,140,255,.15);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+/* =========================================
+   Number
+========================================= */
+
+.stat-card h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg, #4F8CFF, #7C5CFC, #4F8CFF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s linear infinite;
+}
+
+/* =========================================
+   Label
+========================================= */
+
+.stat-card p {
+    position: relative;
+    z-index: 2;
+    color: #94A3B8;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .stats {
+        padding: 60px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 32px 20px;
+    }
+
+    .stat-card h2 {font-size: 2.5rem;}
+}
+
+.stat-card {
+    position: relative;
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from 0deg, #4F8CFF, #7C5CFC, transparent 40%, transparent 60%, #4F8CFF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    animation: spin 4s linear infinite;
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+
+.stat-card:hover::after {
+    opacity: 1;
+}

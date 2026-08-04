@@ -1,0 +1,24 @@
+.auth-layout {
+        height: 100dvh;
+
+        background:
+            radial-gradient(circle at 15% 20%, rgba(79,140,255,.18), transparent 35%),
+            radial-gradient(circle at 90% 15%, rgba(124,92,252,.15), transparent 35%),
+            #0B1020;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+    }
+
+@media (max-height: 560px) {
+    .auth-layout {
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+}

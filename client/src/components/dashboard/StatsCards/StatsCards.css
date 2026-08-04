@@ -1,0 +1,184 @@
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+}
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:26px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    cursor:pointer;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    top:-90px;
+
+    right:-90px;
+
+    opacity:.15;
+
+    filter:blur(70px);
+}
+
+.blue::before{
+
+    background:#4F8CFF;
+}
+
+.purple::before{
+
+    background:#7C5CFC;
+}
+
+.cyan::before{
+
+    background:#00C2FF;
+}
+
+.orange::before{
+
+    background:#FF8A00;
+}
+
+.stat-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:white;
+
+    flex-shrink:0;
+}
+
+.blue .stat-icon{
+
+    background:linear-gradient(135deg,#4F8CFF,#2979FF);
+}
+
+.purple .stat-icon{
+
+    background:linear-gradient(135deg,#7C5CFC,#9B5CFF);
+}
+
+.cyan .stat-icon{
+
+    background:linear-gradient(135deg,#00C2FF,#00E5FF);
+}
+
+.orange .stat-icon{
+
+    background:linear-gradient(135deg,#FF8A00,#FF5E62);
+}
+
+.stat-content{
+
+    flex:1;
+}
+
+.stat-content h2{
+
+    color:white;
+
+    font-size:32px;
+
+    margin:0;
+}
+
+.stat-content p{
+
+    color:#94A3B8;
+
+    margin:6px 0 12px;
+}
+
+.trend{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(76,175,80,.15);
+
+    color:#4ADE80;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+@media(max-width:1200px){
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}

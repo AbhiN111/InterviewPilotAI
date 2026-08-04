@@ -1,0 +1,171 @@
+.profile-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    text-align:center;
+}
+
+.profile-cover{
+
+    height:120px;
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+}
+
+.profile-avatar{
+
+    position:relative;
+
+    width:140px;
+
+    height:140px;
+
+    margin:-70px auto 20px;
+}
+
+.profile-avatar img{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #111827;
+}
+
+.camera-btn{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:8px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#4F8CFF;
+
+    color:white;
+
+    font-size:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+}
+
+.camera-btn:hover{
+
+    transform:scale(1.08);
+}
+
+.profile-card h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+.role{
+
+    color:#94A3B8;
+
+    margin-bottom:26px;
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    color:#CBD5E1;
+
+    padding:0 25px;
+
+    margin-bottom:28px;
+}
+
+.profile-info div{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+}
+
+.edit-profile-btn{
+
+    width:calc(100% - 40px);
+
+    margin:0 20px 20px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+}
+
+.edit-profile-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(79,140,255,.25);
+}

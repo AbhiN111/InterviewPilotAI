@@ -1,3 +1,4 @@
+import Container from "./common/Container";
 import { Link } from "react-router-dom";
 import { FaRobot } from "react-icons/fa";
 import "./Navbar.css";
@@ -5,7 +6,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar-custom">
-      <div className="container">
+      <Container>
 
         <Link className="logo" to="/">
           <FaRobot className="logo-icon" />
@@ -21,7 +22,7 @@ function Navbar() {
           </Link>
         </div>
 
-      </div>
+      </Container>
     </nav>
   );
 }

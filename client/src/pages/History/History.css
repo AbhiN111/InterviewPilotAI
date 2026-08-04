@@ -1,0 +1,51 @@
+.history-page{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#0B1120;
+}
+
+.history-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+.history-main{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:30px;
+}
+
+.history-header{
+
+    margin-bottom:28px;
+}
+
+.history-header h1{
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+.history-header p{
+
+    color:#94A3B8;
+
+    font-size:17px;
+}

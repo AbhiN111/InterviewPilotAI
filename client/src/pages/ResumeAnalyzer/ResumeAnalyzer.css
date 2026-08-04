@@ -1,0 +1,66 @@
+.resume-page{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#0B1120;
+}
+
+.resume-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+.resume-main{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow-y:auto;
+}
+
+.resume-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 420px;
+
+    gap:24px;
+
+    align-items:start;
+}
+
+.resume-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+}
+
+.resume-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+}
+
+@media(max-width:1200px){
+
+    .resume-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}

@@ -1,19 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   Design tokens — "Quantum Glass" theme
+========================================= */
+:root {
+  --bg-base: #030308;
+  --bg-mid: #06060f;
+  --bg-elevated: #0a0a1a;
+
+  --accent-primary: #6c63ff;   /* electric indigo */
+  --accent-secondary: #00e5ff; /* cyan */
+  --accent-tertiary: #ff3ec9;  /* magenta — holographic third stop */
+  --accent-pop: #ff3ec9;       /* CTA accent, used sparingly */
+
+  --text-primary: #f4f5ff;
+  --text-muted: #8a8aa3;
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --hairline: rgba(108, 99, 255, 0.15);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   width: 100%;
   min-height: 100%;
 }
 
 body {
-  background: #0B1020;
-  color: white;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
+  color: var(--text-primary);
   overflow-x: hidden;
+  position: relative;
+
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-mid) 45%, var(--bg-elevated) 100%);
+  background-attachment: fixed;
+  background-size: 100% 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+/* =========================================
+   Shared animated background — one continuous
+   layer for the whole page, fixed to viewport
+========================================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(108,99,255,.18), transparent 38%),
+    radial-gradient(circle at 88% 8%, rgba(0,229,255,.14), transparent 38%),
+    radial-gradient(circle at 25% 88%, rgba(255,62,201,.10), transparent 42%),
+    radial-gradient(circle at 80% 78%, rgba(108,99,255,.10), transparent 42%);
+  background-size: 200% 200%;
+  animation: meshDrift 24s ease-in-out infinite;
+}
+
+/* faint drifting starfield / particle dots */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(255,255,255,.25), transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1.5px 1.5px at 85% 20%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1.5px 1.5px at 10% 65%, rgba(255,255,255,.22), transparent),
+    radial-gradient(1px 1px at 92% 85%, rgba(255,255,255,.25), transparent);
+  background-size: 100% 100%;
+  animation: starDrift 60s linear infinite;
+  opacity: .6;
+}
+
+@keyframes meshDrift {
+  0%   { background-position: 0% 0%, 100% 0%, 25% 100%, 80% 80%; }
+  50%  { background-position: 22% 28%, 72% 22%, 40% 68%, 62% 60%; }
+  100% { background-position: 0% 0%, 100% 0%, 25% 100%, 80% 80%; }
+}
+
+@keyframes starDrift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-120px); }
+}
+
+/* =========================================
+   Reusable utilities
+========================================= */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary), var(--accent-tertiary), var(--accent-secondary));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 7s linear infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.primary-btn {
+  position: relative;
+  border: none;
+  color: #0a0714;
+  font-weight: 700;
+  font-family: var(--font-display);
+  background: linear-gradient(270deg, var(--accent-secondary), var(--accent-primary), var(--accent-tertiary), var(--accent-secondary));
+  background-size: 300% auto;
+  animation: gradientShift 6s linear infinite;
+  box-shadow: 0 12px 32px rgba(108,99,255,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 46px rgba(108,99,255,.5);
+}
+
+.secondary-btn {
+  color: var(--text-primary);
+  background: rgba(108,99,255,.05);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(8px);
+  transition: all .3s ease;
+}
+
+.secondary-btn:hover {
+  border-color: rgba(108,99,255,.5);
+  background: rgba(108,99,255,.1);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   Card glass + holographic sheen sweep
+   (used on feature/step/testimonial/stat cards)
+========================================= */
+.glass-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-sheen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.06),
+    rgba(0,229,255,.08),
+    rgba(255,255,255,.06),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: sheenSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sheenSweep {
+  0%   { left: -60%; }
+  50%  { left: 130%; }
+  100% { left: 130%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after,
+  .gradient-text, .primary-btn,
+  .glass-sheen::before {
+    animation: none !important;
+  }
+}
+
+.stats, .features, .how-it-works, .testimonials, .cta {
+  position: relative;
+}
+
+.stats::before, .features::before, .how-it-works::before,
+.testimonials::before, .cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hairline), transparent);
 }

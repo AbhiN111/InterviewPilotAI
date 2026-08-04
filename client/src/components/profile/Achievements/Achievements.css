@@ -1,0 +1,114 @@
+.achievements-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:28px;
+}
+
+.achievement-header{
+
+    margin-bottom:24px;
+}
+
+.achievement-header h2{
+
+    color:white;
+
+    font-size:26px;
+}
+
+.achievement-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.achievement-item{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    transition:.3s;
+}
+
+.achievement-item:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(79,140,255,.05);
+}
+
+.achievement-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:22px;
+
+    flex-shrink:0;
+}
+
+.achievement-icon.gold{
+
+    background:linear-gradient(135deg,#F59E0B,#FBBF24);
+}
+
+.achievement-icon.blue{
+
+    background:linear-gradient(135deg,#4F8CFF,#2563EB);
+}
+
+.achievement-icon.orange{
+
+    background:linear-gradient(135deg,#F97316,#FB923C);
+}
+
+.achievement-icon.green{
+
+    background:linear-gradient(135deg,#10B981,#22C55E);
+}
+
+.achievement-item h3{
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-size:18px;
+}
+
+.achievement-item p{
+
+    color:#94A3B8;
+
+    line-height:1.6;
+
+    font-size:14px;
+}

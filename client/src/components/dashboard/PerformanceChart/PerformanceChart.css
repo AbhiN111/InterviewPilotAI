@@ -1,0 +1,97 @@
+.performance-card{
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.performance-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    right:-100px;
+
+    top:-100px;
+
+    border-radius:50%;
+
+    background:#4F8CFF;
+
+    opacity:.15;
+
+    filter:blur(90px);
+}
+
+.performance-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.performance-header h2{
+
+    color:white;
+
+    margin-bottom:6px;
+}
+
+.performance-header p{
+
+    color:#94A3B8;
+}
+
+.chart-tabs{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.chart-tabs button{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#94A3B8;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.chart-tabs .active{
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    color:white;
+}

@@ -1,0 +1,397 @@
+/* ============================
+   Document scroll lock
+   (class is toggled by Login.jsx while this page is mounted)
+============================ */
+
+html.login-no-scroll,
+body.login-no-scroll {
+    overflow: hidden;
+}
+
+/* Safety fallback: on a genuinely very short viewport, let the
+   document scroll normally instead of silently clipping content */
+@media (max-height: 560px) {
+    html.login-no-scroll,
+    body.login-no-scroll {
+        overflow-y: auto;
+    }
+}
+
+/* ============================
+   Login Page
+============================ */
+
+.login-page {
+    position: relative;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: clamp(16px, 3vh, 28px) clamp(20px, 4vw, 40px);
+
+    color: white;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@media (max-height: 560px) {
+    .login-page {
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+}
+
+/* ============================
+   Background Blobs
+============================ */
+
+.login-blob {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(140px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.blob-one {
+    top: -120px;
+    left: -120px;
+
+    background: rgba(79, 140, 255, 0.35);
+}
+
+.blob-two {
+    bottom: -140px;
+    right: -100px;
+
+    background: rgba(124, 92, 252, 0.3);
+}
+
+/* ============================
+   Container
+============================ */
+
+.login-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1280px;
+    max-height: 100%;
+
+    display: grid;
+
+    /* minmax(0, 1fr) — not the default 1fr — so a column can never be
+       forced wider than the viewport by its content's intrinsic size.
+       This is what was causing the horizontal scrollbar. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: clamp(32px, 5vw, 80px);
+
+    align-items: center;
+}
+
+/* ============================
+   Left
+============================ */
+
+.login-left {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.login-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    padding: clamp(6px, 1vh, 10px) 18px;
+
+    border-radius: 999px;
+
+    background: rgba(79, 140, 255, .08);
+
+    border: 1px solid rgba(79, 140, 255, .18);
+
+    color: #4F8CFF;
+
+    font-weight: 600;
+    font-size: .95rem;
+
+    margin-bottom: clamp(10px, 2vh, 18px);
+}
+
+.login-header h1 {
+    font-size: clamp(1.8rem, 4vh, 2.7rem);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: clamp(8px, 1.5vh, 12px);
+}
+
+.login-header p {
+    max-width: 480px;
+
+    color: #94A3B8;
+
+    font-size: clamp(.9rem, 1.8vh, 1rem);
+
+    line-height: 1.5;
+
+    margin-bottom: clamp(14px, 2.5vh, 22px);
+}
+
+/* ============================
+   Card
+============================ */
+
+.login-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: clamp(16px, 2.5vh, 28px);
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+
+/* Fluid field sizing, scoped to this page only so other forms using
+   the same Input/Button components are unaffected */
+.login-card .input-group {
+    margin-bottom: clamp(8px, 1.6vh, 14px);
+}
+
+.login-card .input-group label {
+    font-size: .9rem;
+}
+
+.login-card .input-group input {
+    height: clamp(42px, 6vh, 48px);
+}
+
+.login-card .btn {
+    height: clamp(42px, 6vh, 48px);
+}
+
+/* ============================
+   Options row
+============================ */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 clamp(10px, 1.8vh, 18px);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94A3B8;
+    cursor: pointer;
+    font-size: .9rem;
+    white-space: nowrap;
+}
+
+.remember-me input {
+    accent-color: #4F8CFF;
+}
+
+.forgot-password {
+    color: #4F8CFF;
+    text-decoration: none;
+    font-size: .9rem;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+/* ============================
+   Divider
+============================ */
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: clamp(10px, 1.8vh, 16px) 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+}
+
+.divider span {
+    margin: 0 15px;
+    color: #94A3B8;
+    font-size: .9rem;
+}
+
+/* ============================
+   Register link
+============================ */
+
+.register-link {
+    text-align: center;
+    margin-top: clamp(10px, 1.8vh, 16px);
+    color: #94A3B8;
+    font-size: .9rem;
+}
+
+.register-link a {
+    color: #4F8CFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    color: white;
+}
+
+/* ============================
+   Right Side Illustration
+============================ */
+
+.login-right {
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.scene-wrapper {
+    position: relative;
+
+    /* bounded by both available width and available height, so it
+       never forces the row (and the page) taller than the viewport */
+    width: min(100%, 42vh, 480px);
+    aspect-ratio: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* No border-radius, background, or shadow here on purpose — the SVG
+   itself has a transparent background, and the mask below fades the
+   whole illustration out at its edges, so it sits directly on the
+   page's own gradient instead of looking like a pasted-in image. */
+.scene-image {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+    animation: floatScene 6s ease-in-out infinite;
+
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 40%, transparent 78%);
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 40%, transparent 78%);
+}
+
+.scene-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7C5CFC;
+    box-shadow: 0 0 20px #7C5CFC;
+    z-index: 3;
+}
+
+.p1 { top: 8%; right: 10%; animation: floatParticle 4s infinite; }
+.p2 { bottom: 12%; left: 8%; animation: floatParticle 6s infinite; }
+.p3 { top: 55%; right: 4%; animation: floatParticle 5s infinite; }
+
+/* ============================
+   Animations
+============================ */
+
+@keyframes floatScene {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ============================
+   Responsive
+============================ */
+
+@media (max-width: 1000px) {
+
+    .login-container {
+        grid-template-columns: minmax(0, 1fr);
+
+        text-align: center;
+    }
+
+    .login-left {
+        align-items: center;
+    }
+
+    .login-header p {
+        margin-inline: auto;
+    }
+
+    .login-card {
+        max-width: 500px;
+        margin-inline: auto;
+    }
+
+    .login-right {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-page {
+        padding: 16px;
+    }
+
+    .login-card {
+        padding: 18px;
+    }
+}

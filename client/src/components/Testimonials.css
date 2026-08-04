@@ -1,0 +1,221 @@
+/* =========================================
+   Testimonials Section
+========================================= */
+
+.testimonials {
+    position: relative;
+    background: transparent;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* =========================================
+   Card
+========================================= */
+
+.testimonial-card {
+    position: relative;
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(20px);
+
+    overflow: hidden;
+
+    transition: .35s ease;
+}
+
+.testimonial-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(79,140,255,.10),
+        rgba(124,92,252,.08)
+    );
+
+    opacity: 0;
+
+    transition: .35s ease;
+}
+
+.testimonial-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: rgba(79,140,255,.30);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 45px rgba(79,140,255,.15);
+}
+
+.testimonial-card:hover::before {
+
+    opacity: 1;
+}
+
+/* =========================================
+   Stars
+========================================= */
+
+.stars {
+
+    display: flex;
+
+    gap: 6px;
+
+    color: #FFD54A;
+
+    font-size: 1rem;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* =========================================
+   Text
+========================================= */
+
+.testimonial-text {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #CBD5E1;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+    font-size: 1rem;
+}
+
+/* =========================================
+   User
+========================================= */
+
+.testimonial-user {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.avatar {
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+}
+
+.testimonial-user h4 {
+
+    margin-bottom: 5px;
+
+    font-size: 1.05rem;
+}
+
+.testimonial-user span {
+
+    color: #94A3B8;
+
+    font-size: .9rem;
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media(max-width:992px){
+
+    .testimonial-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .testimonials{
+
+        padding:80px 0;
+    }
+
+    .testimonial-card{
+
+        padding:28px;
+    }
+}
+
+.avatar {
+    background: linear-gradient(135deg, #4F8CFF, #7C5CFC, #4F8CFF);
+    background-size: 200% auto;
+    animation: gradientShift 6s linear infinite;
+}
+
+.testimonial-card {
+    position: relative;
+}
+
+.testimonial-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from 0deg, #4F8CFF, #7C5CFC, transparent 40%, transparent 60%, #4F8CFF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    animation: spin 4s linear infinite;
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+
+.testimonial-card:hover::after {
+    opacity: 1;
+}

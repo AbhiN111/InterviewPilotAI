@@ -1,0 +1,135 @@
+.about-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.about-row:last-child{
+
+    border-bottom:none;
+}
+
+.about-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+.about-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:22px;
+}
+
+.about-icon.version{
+
+    background:linear-gradient(
+        135deg,
+        #3B82F6,
+        #2563EB
+    );
+}
+
+.about-icon.privacy{
+
+    background:linear-gradient(
+        135deg,
+        #8B5CF6,
+        #7C3AED
+    );
+}
+
+.about-icon.terms{
+
+    background:linear-gradient(
+        135deg,
+        #F59E0B,
+        #D97706
+    );
+}
+
+.about-icon.support{
+
+    background:linear-gradient(
+        135deg,
+        #10B981,
+        #059669
+    );
+}
+
+.about-left h3{
+
+    color:white;
+
+    font-size:18px;
+
+    margin-bottom:6px;
+}
+
+.about-left p{
+
+    color:#94A3B8;
+
+    font-size:14px;
+}
+
+.about-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#1E293B;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.about-btn:hover{
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    transform:translateY(-3px);
+}

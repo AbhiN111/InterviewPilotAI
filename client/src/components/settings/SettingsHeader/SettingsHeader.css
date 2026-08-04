@@ -1,0 +1,22 @@
+.settings-header{
+
+    margin-bottom:34px;
+}
+
+.settings-header h1{
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+.settings-header p{
+
+    color:#94A3B8;
+
+    font-size:17px;
+}

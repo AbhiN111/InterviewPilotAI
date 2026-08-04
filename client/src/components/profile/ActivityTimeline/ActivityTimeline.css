@@ -1,0 +1,116 @@
+.timeline-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-bottom:40px;
+}
+
+.timeline-header{
+
+    margin-bottom:28px;
+}
+
+.timeline-header h2{
+
+    color:white;
+
+    font-size:28px;
+}
+
+.timeline-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.timeline-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    transition:.3s;
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(79,140,255,.06);
+
+    border:1px solid rgba(79,140,255,.15);
+}
+
+.timeline-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:22px;
+
+    flex-shrink:0;
+}
+
+.timeline-icon.blue{
+
+    background:linear-gradient(135deg,#4F8CFF,#2563EB);
+}
+
+.timeline-icon.purple{
+
+    background:linear-gradient(135deg,#7C5CFC,#8B5CF6);
+}
+
+.timeline-icon.green{
+
+    background:linear-gradient(135deg,#10B981,#22C55E);
+}
+
+.timeline-icon.orange{
+
+    background:linear-gradient(135deg,#F97316,#FB923C);
+}
+
+.timeline-content h3{
+
+    color:white;
+
+    font-size:18px;
+
+    margin-bottom:6px;
+}
+
+.timeline-content p{
+
+    color:#94A3B8;
+
+    font-size:14px;
+}

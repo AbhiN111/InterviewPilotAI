@@ -1,0 +1,134 @@
+.ats-card{
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:28px;
+}
+
+.ats-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.ats-header h2{
+
+    color:white;
+
+    font-size:24px;
+}
+
+.ats-header span{
+
+    color:#22C55E;
+
+    font-weight:600;
+}
+
+.score-circle{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.score-circle svg{
+
+    transform:rotate(-90deg);
+}
+
+.circle-bg{
+
+    fill:none;
+
+    stroke:#1E293B;
+
+    stroke-width:10;
+}
+
+.circle-progress{
+
+    fill:none;
+
+    stroke:#4F8CFF;
+
+    stroke-width:10;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:471;
+
+    transition:.6s;
+}
+
+.score-value{
+
+    position:absolute;
+
+    text-align:center;
+}
+
+.score-value h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin:0;
+}
+
+.score-value p{
+
+    color:#94A3B8;
+
+    margin-top:4px;
+}
+
+.score-stats{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.score-stats div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.score-stats h4{
+
+    color:#CBD5E1;
+
+    font-weight:500;
+}
+
+.score-stats span{
+
+    color:#4F8CFF;
+
+    font-weight:600;
+}

@@ -1,0 +1,97 @@
+.skills-card-profile{
+
+    margin-top:24px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:28px;
+}
+
+.skills-header-profile{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:26px;
+}
+
+.skills-header-profile h2{
+
+    color:white;
+
+    font-size:26px;
+}
+
+.skills-header-profile button{
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.skills-header-profile button:hover{
+
+    transform:translateY(-3px);
+}
+
+.skills-wrapper{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+}
+
+.skill-badge{
+
+    padding:14px 22px;
+
+    border-radius:999px;
+
+    background:rgba(79,140,255,.12);
+
+    border:1px solid rgba(79,140,255,.25);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.skill-badge:hover{
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    border-color:transparent;
+}

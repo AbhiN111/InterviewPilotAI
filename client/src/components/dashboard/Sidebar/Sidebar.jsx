@@ -28,7 +28,7 @@ function Sidebar() {
     {
       title: "Resume Analyzer",
       icon: <FaFileAlt />,
-      path: "/resume",
+      path: "/resume-analyzer",
     },
     {
       title: "History",
@@ -57,10 +57,12 @@ function Sidebar() {
           <div className="sidebar-logo">
 
             <div className="logo-circle">
+
               <FaRobot />
+
             </div>
 
-            <div>
+            <div className="logo-content">
 
               <h2>InterviewPilot</h2>
 
@@ -70,8 +72,13 @@ function Sidebar() {
 
           </div>
 
-          <button className="collapse-btn">
+          <button
+            className="collapse-btn"
+            title="Collapse Sidebar"
+          >
+
             <FaChevronLeft />
+
           </button>
 
         </div>
@@ -84,12 +91,23 @@ function Sidebar() {
               key={item.title}
               to={item.path}
               className={({ isActive }) =>
-                isActive ? "sidebar-link active" : "sidebar-link"
+                isActive
+                  ? "sidebar-link active"
+                  : "sidebar-link"
               }
             >
-              <span>{item.icon}</span>
 
-              <p>{item.title}</p>
+              <div className="sidebar-icon">
+
+                {item.icon}
+
+              </div>
+
+              <span className="sidebar-text">
+
+                {item.title}
+
+              </span>
 
             </NavLink>
 
@@ -103,7 +121,13 @@ function Sidebar() {
 
         <div className="storage-card">
 
-          <h4>Weekly Goal</h4>
+          <div className="storage-title">
+
+            <h4>Weekly Goal</h4>
+
+            <span>72%</span>
+
+          </div>
 
           <div className="storage-bar">
 
@@ -111,7 +135,7 @@ function Sidebar() {
 
           </div>
 
-          <p>72% Completed</p>
+          <p>18 of 25 interviews completed</p>
 
         </div>
 

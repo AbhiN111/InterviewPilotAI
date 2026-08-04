@@ -1,0 +1,246 @@
+.setup-page{
+
+    min-height:100vh;
+
+    background:#0B1020;
+
+    padding:50px 30px;
+}
+
+.setup-container{
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.setup-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.setup-header h1{
+
+    color:white;
+
+    font-size:46px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+}
+
+.setup-header p{
+
+    color:#94A3B8;
+
+    font-size:17px;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+.setup-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.setup-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.input-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+.input-group select{
+
+    height:56px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    padding:0 18px;
+
+    background:#161E35;
+
+    color:white;
+
+    font-size:15px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.3s;
+}
+
+.input-group select:focus{
+
+    border-color:#4F8CFF;
+
+    box-shadow:0 0 0 4px rgba(79,140,255,.15);
+}
+
+.resume-upload{
+
+    margin-top:35px;
+
+    border:2px dashed rgba(79,140,255,.35);
+
+    border-radius:24px;
+
+    padding:45px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    background:rgba(79,140,255,.03);
+}
+
+.resume-upload:hover{
+
+    border-color:#4F8CFF;
+
+    background:rgba(79,140,255,.06);
+}
+
+.resume-upload svg{
+
+    font-size:42px;
+
+    color:#4F8CFF;
+
+    margin-bottom:16px;
+}
+
+.resume-upload h3{
+
+    color:white;
+
+    margin-bottom:10px;
+}
+
+.resume-upload p{
+
+    color:#94A3B8;
+
+    margin-bottom:20px;
+}
+
+.resume-upload input{
+
+    color:white;
+}
+
+.start-interview-btn{
+
+    width:100%;
+
+    margin-top:35px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.start-interview-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 45px rgba(79,140,255,.35);
+}
+
+@media(max-width:900px){
+
+    .setup-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .setup-card{
+
+        padding:25px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .setup-page{
+
+        padding:20px;
+    }
+
+    .setup-header h1{
+
+        font-size:34px;
+    }
+
+}

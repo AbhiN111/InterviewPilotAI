@@ -1,76 +1,53 @@
 import "./Hero.css";
+import Container from "./common/Container";
+import heroAI from "../assets/hero-ai.png";
 
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero-content">
-        {/* Left Side */}
-        <div className="hero-left">
-          <span className="hero-badge">
-            🚀 AI-Powered Interview Platform
-          </span>
+      <div className="hero-blur blur-one"></div>
+      <div className="hero-blur blur-two"></div>
 
-          <h1>
-            Ace Your Next
-            <br />
-            Technical Interview
-          </h1>
+      <Container>
+        <div className="hero-content">
+          {/* Left Side */}
+          <div className="hero-left">
+            <span className="hero-badge">
+              🚀 AI-Powered Interview Platform
+            </span>
 
-          <p>
-            Practice realistic interviews, receive instant AI feedback,
-            and improve your confidence before your dream job.
-          </p>
+            <h1>
+              Ace Your Next
+              <span> Technical Interview</span>
+            </h1>
 
-          <div className="hero-buttons">
-            <button className="primary-btn">
-              Start Interview
-            </button>
+            <p>
+              Practice AI-powered mock interviews with personalized feedback,
+              performance analytics, and confidence-building sessions designed
+              to help you crack your dream job.
+            </p>
 
-            <button className="secondary-btn">
-              Explore Features
-            </button>
-          </div>
-        </div>
+            <div className="hero-buttons">
+              <button className="primary-btn">
+                Start Interview
+              </button>
 
-        {/* Right Side */}
-        <div className="hero-right">
-          <div className="interview-card">
-            <div className="card-header">
-              <span className="live-dot"></span>
-              Live AI Interview
-            </div>
-
-            <div className="chat">
-              <div className="ai-message">
-                <strong>AI Interviewer</strong>
-
-                <p>
-                  Tell me about yourself and your experience with React.
-                </p>
-              </div>
-
-              <div className="user-message">
-                <strong>You</strong>
-
-                <p>
-                  I'm a Computer Engineering student passionate about
-                  full-stack development and AI.
-                </p>
-              </div>
-            </div>
-
-            <div className="score-box">
-              <h4>Interview Score</h4>
-
-              <div className="progress-bar">
-                <div className="progress-fill"></div>
-              </div>
-
-              <p>84% Confidence</p>
+              <button className="secondary-btn">
+                Explore Features
+              </button>
             </div>
           </div>
+
+          {/* Right Side */}
+          <div className="hero-right">
+            <img
+              src={heroAI}
+              alt="AI Interview Illustration"
+              className="hero-image"
+            />
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

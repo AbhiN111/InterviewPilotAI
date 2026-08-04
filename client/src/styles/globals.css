@@ -1,0 +1,27 @@
+/* .stats,
+.features,
+.how-it-works,
+.testimonials,
+.cta {
+    position: relative;
+}
+
+.stats::before,
+.features::before,
+.how-it-works::before,
+.testimonials::before,
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+} */
