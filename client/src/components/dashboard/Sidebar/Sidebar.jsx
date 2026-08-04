@@ -50,100 +50,86 @@ function Sidebar() {
   return (
     <aside className="sidebar">
 
-      <div>
+      {/* ==========================
+              LOGO
+      =========================== */}
 
-        <div className="sidebar-top">
+      <div className="sidebar-header">
 
-          <div className="sidebar-logo">
+        <div className="sidebar-logo">
 
-            <div className="logo-circle">
+          <div className="logo-circle">
 
-              <FaRobot />
-
-            </div>
-
-            <div className="logo-content">
-
-              <h2>InterviewPilot</h2>
-
-              <span>AI Platform</span>
-
-            </div>
+            <FaRobot />
 
           </div>
 
-          <button
-            className="collapse-btn"
-            title="Collapse Sidebar"
-          >
+          <div className="logo-content">
 
-            <FaChevronLeft />
+            <h2>InterviewPilot</h2>
 
-          </button>
+            <p>AI Interview Platform</p>
+
+          </div>
 
         </div>
 
-        <nav className="sidebar-menu">
-
-          {menuItems.map((item) => (
-
-            <NavLink
-              key={item.title}
-              to={item.path}
-              className={({ isActive }) =>
-                isActive
-                  ? "sidebar-link active"
-                  : "sidebar-link"
-              }
-            >
-
-              <div className="sidebar-icon">
-
-                {item.icon}
-
-              </div>
-
-              <span className="sidebar-text">
-
-                {item.title}
-
-              </span>
-
-            </NavLink>
-
-          ))}
-
-        </nav>
+        <button
+          className="collapse-btn"
+          title="Collapse Sidebar"
+        >
+          <FaChevronLeft />
+        </button>
 
       </div>
 
-      <div>
+      {/* ==========================
+            NAVIGATION
+      =========================== */}
 
-        <div className="storage-card">
+      <nav className="sidebar-menu">
 
-          <div className="storage-title">
+        {menuItems.map((item) => (
 
-            <h4>Weekly Goal</h4>
+          <NavLink
+            key={item.title}
+            to={item.path}
+            className={({ isActive }) =>
+              isActive
+                ? "sidebar-link active"
+                : "sidebar-link"
+            }
+          >
 
-            <span>72%</span>
+            <div className="sidebar-icon" >
 
-          </div>
+              {item.icon}
 
-          <div className="storage-bar">
+            </div>
 
-            <div className="storage-fill"></div>
+            <span className="sidebar-text">
 
-          </div>
+              {item.title}
 
-          <p>18 of 25 interviews completed</p>
+            </span>
 
-        </div>
+          </NavLink>
+
+        ))}
+
+      </nav>
+
+      {/* ==========================
+              FOOTER
+      =========================== */}
+
+      <div className="sidebar-footer">
 
         <button className="logout-btn">
 
           <FaSignOutAlt />
 
-          Logout
+          <span>Logout</span>
 
         </button>
 

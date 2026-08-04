@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./styles/variables.css";
+import "./styles/global.css";
+import "./styles/buttons.css";
+import "./styles/cards.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import "./index.css";
-import "./styles/globals.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -92,6 +92,11 @@
   position: relative;
   z-index: 2;
 }
+.hero-left{
+    margin-top: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .hero-left h1 {
   font-family: var(--font-display);
@@ -132,12 +137,16 @@
 }
 
 .hero-right{
+    margin-top:auto;
+
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 }
+
+
 
 .hero-image {
   width: 145%;        /* was 130% — bumped up for a bigger illustration */
@@ -189,3 +198,4 @@
     justify-content:center;
   }
 }
+
