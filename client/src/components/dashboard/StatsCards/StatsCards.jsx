@@ -9,61 +9,96 @@ import {
 import "./StatsCards.css";
 
 function StatsCards() {
+
   const stats = [
     {
-      title: "AI Score",
+      title: "AI Interview Score",
       value: "94%",
+      change: "+8.2%",
+      subtitle: "Compared to last week",
       icon: <FaChartLine />,
-      change: "+8%",
       color: "blue",
     },
     {
       title: "Resume Score",
       value: "88%",
+      change: "+5.4%",
+      subtitle: "ATS Optimization",
       icon: <FaFileAlt />,
-      change: "+5%",
       color: "purple",
     },
     {
-      title: "Interviews",
+      title: "Mock Interviews",
       value: "34",
-      icon: <FaMicrophone />,
       change: "+12",
+      subtitle: "Completed this month",
+      icon: <FaMicrophone />,
       color: "cyan",
     },
     {
       title: "Current Streak",
-      value: "18 Days",
+      value: "18",
+      change: "+3 Days",
+      subtitle: "Keep it going 🔥",
       icon: <FaFire />,
-      change: "+3",
       color: "orange",
     },
   ];
 
   return (
+
     <section className="stats-grid">
 
       {stats.map((item, index) => (
 
-        <div className={`stat-card ${item.color}`} key={index}>
+        <div
+          className={`stat-card ${item.color}`}
+          key={index}
+        >
 
-          <div className="stat-icon">
-            {item.icon}
-          </div>
+          <div className="stat-top">
 
-          <div className="stat-content">
+            <div className="stat-icon">
 
-            <h2>{item.value}</h2>
+              {item.icon}
 
-            <p>{item.title}</p>
+            </div>
 
-            <div className="trend">
+            <div className="trend-badge">
 
               <FaArrowUp />
 
-              {item.change} this week
+              <span>{item.change}</span>
 
             </div>
+
+          </div>
+
+          <div className="stat-body">
+
+            <h2>
+
+              {item.value}
+
+            </h2>
+
+            <h4>
+
+              {item.title}
+
+            </h4>
+
+            <p>
+
+              {item.subtitle}
+
+            </p>
+
+          </div>
+
+          <div className="progress-line">
+
+            <div className="progress-fill"></div>
 
           </div>
 
@@ -72,6 +107,7 @@ function StatsCards() {
       ))}
 
     </section>
+
   );
 }
 

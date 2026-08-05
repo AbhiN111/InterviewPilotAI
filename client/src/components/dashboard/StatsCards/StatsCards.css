@@ -1,11 +1,20 @@
+/* ==========================================================
+   STATS GRID
+========================================================== */
+
 .stats-grid{
 
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:22px;
+    gap:24px;
+
 }
+
+/* ==========================================================
+   CARD
+========================================================== */
 
 .stat-card{
 
@@ -15,31 +24,40 @@
 
     display:flex;
 
-    align-items:center;
+    flex-direction:column;
 
-    gap:18px;
+    justify-content:space-between;
 
-    padding:26px;
+    min-height:220px;
+
+    padding:24px;
 
     border-radius:24px;
 
-    background:rgba(255,255,255,.04);
+    background:#111827;
 
     border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
 
     transition:.35s;
 
     cursor:pointer;
+
 }
 
 .stat-card:hover{
 
     transform:translateY(-8px);
 
-    box-shadow:0 20px 45px rgba(0,0,0,.28);
+    border-color:rgba(79,140,255,.35);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.35);
+
 }
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
 
 .stat-card::before{
 
@@ -47,48 +65,71 @@
 
     position:absolute;
 
-    width:180px;
+    width:220px;
 
-    height:180px;
+    height:220px;
 
     border-radius:50%;
 
-    top:-90px;
+    top:-120px;
 
-    right:-90px;
+    right:-120px;
 
-    opacity:.15;
+    opacity:.18;
 
     filter:blur(70px);
+
 }
 
 .blue::before{
 
     background:#4F8CFF;
+
 }
 
 .purple::before{
 
     background:#7C5CFC;
+
 }
 
 .cyan::before{
 
-    background:#00C2FF;
+    background:#06B6D4;
+
 }
 
 .orange::before{
 
-    background:#FF8A00;
+    background:#FB923C;
+
 }
+
+/* ==========================================================
+   TOP
+========================================================== */
+
+.stat-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
 
 .stat-icon{
 
-    width:70px;
+    width:64px;
 
-    height:70px;
+    height:64px;
 
-    border-radius:20px;
+    border-radius:18px;
 
     display:flex;
 
@@ -96,89 +137,184 @@
 
     align-items:center;
 
-    font-size:28px;
-
     color:white;
 
-    flex-shrink:0;
+    font-size:24px;
+
 }
 
 .blue .stat-icon{
 
-    background:linear-gradient(135deg,#4F8CFF,#2979FF);
+    background:linear-gradient(135deg,#4F8CFF,#2563EB);
+
 }
 
 .purple .stat-icon{
 
-    background:linear-gradient(135deg,#7C5CFC,#9B5CFF);
+    background:linear-gradient(135deg,#7C5CFC,#9333EA);
+
 }
 
 .cyan .stat-icon{
 
-    background:linear-gradient(135deg,#00C2FF,#00E5FF);
+    background:linear-gradient(135deg,#06B6D4,#0891B2);
+
 }
 
 .orange .stat-icon{
 
-    background:linear-gradient(135deg,#FF8A00,#FF5E62);
+    background:linear-gradient(135deg,#FB923C,#F97316);
+
 }
 
-.stat-content{
+/* ==========================================================
+   TREND
+========================================================== */
 
-    flex:1;
-}
+.trend-badge{
 
-.stat-content h2{
-
-    color:white;
-
-    font-size:32px;
-
-    margin:0;
-}
-
-.stat-content p{
-
-    color:#94A3B8;
-
-    margin:6px 0 12px;
-}
-
-.trend{
-
-    display:inline-flex;
+    display:flex;
 
     align-items:center;
 
     gap:6px;
 
-    padding:6px 12px;
+    padding:8px 12px;
 
     border-radius:999px;
 
-    background:rgba(76,175,80,.15);
+    background:rgba(34,197,94,.12);
 
     color:#4ADE80;
 
     font-size:13px;
 
     font-weight:600;
+
 }
 
-@media(max-width:1200px){
+.trend-badge svg{
+
+    font-size:11px;
+
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.stat-body{
+
+    margin-top:24px;
+
+}
+
+.stat-body h2{
+
+    margin:0;
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:700;
+
+    line-height:1;
+
+}
+
+.stat-body h4{
+
+    margin:16px 0 8px;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.stat-body p{
+
+    margin:0;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+.progress-line{
+
+    margin-top:28px;
+
+    width:100%;
+
+    height:8px;
+
+    background:rgba(255,255,255,.06);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:82%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #4F8CFF,
+        #7C5CFC
+    );
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1300px){
 
     .stats-grid{
 
         grid-template-columns:repeat(2,1fr);
+
     }
 
 }
 
-@media(max-width:700px){
+@media(max-width:768px){
 
     .stats-grid{
 
         grid-template-columns:1fr;
+
+    }
+
+    .stat-card{
+
+        min-height:190px;
+
+    }
+
+    .stat-body h2{
+
+        font-size:34px;
+
     }
 
 }
